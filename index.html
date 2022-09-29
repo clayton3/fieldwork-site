@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spencer LaJoye Live!</title>
+
+    <link href="style/main.css" rel="stylesheet" type="text/css" />
+    <link href="style/NavRouter.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="titleNav">
+        <div id="title">
+            Spencer LaJoye Live! in South Philly
+        </div>
+        <div id="nav"></div>
+    </div>
+
+    <div id="content"></div>
+
+    <div id="footer">Clayton Blevins</div>
+
+    <script>"use strict";</script>
+
+    <script src="js/reusable/MakeNavRouter.js"></script>
+
+    <script src="js/content/homeContent.js"></script>
+    <script src="js/content/genreContent.js"></script>
+
+    <script>
+        var myNavList = [
+            { linkText:"Home", linkURL: "#/home", action: homeContent },
+            { linkText: "Genre Info", linkURL: "#/genre", action: genreContent }
+        ];
+
+        var myNav = MakeNavRouter({
+            navId: "nav",
+            navList: myNavList,
+            contentId: "content",
+            startLink: "#/home"
+        });
+    </script>
+</body>
+</html>
