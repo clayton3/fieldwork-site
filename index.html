@@ -25,11 +25,13 @@
 
     <script src="js/content/homeContent.js"></script>
     <script src="js/content/genreContent.js"></script>
+    <script src="js/content/artistContent.js"></script>
 
     <script>
         var myNavList = [
             { linkText:"Home", linkURL: "#/home", action: homeContent },
-            { linkText: "Genre Info", linkURL: "#/genre", action: genreContent }
+            { linkText: "Genre", linkURL: "#/genre", action: genreContent },
+            { linkText: "Artist", linkURL: "#/artist", action: artistContent }
         ];
 
         var myNav = MakeNavRouter({

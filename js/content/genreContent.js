@@ -18,6 +18,10 @@ function genreContent(){
             life.  Folk also often forgoes complicated instrumentals in favor of letting the story and the power
             of what is being told shine through. 
         </p>
+        <h3>Sources for this section:</h3>
+        <p>
+            
+        </p>
     `;
 
     var ele = document.createElement("div");
