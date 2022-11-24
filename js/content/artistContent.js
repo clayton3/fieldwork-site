@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const artistContent = () => {
     return (
         <div>
@@ -10,6 +11,17 @@ const artistContent = () => {
                 their use of lyricism and mixing the techniques they learned in their evangelist upbringing. Spencer is able to seamlessly weave their storytelling skills into their
                 songs during live performance, many times starting a story and transitioning to song at just the right time to make you feel the music just that much more.
             </p>
+=======
+function artistContent(){
+    var content = `
+        <h2>Information about Spencer LaJoye:</h2>
+        <p>
+            Spencer LaJoye is an artist that writes and performs music in the genre of folk/pop.
+            Spencer writes of their experiences with finding their identity and what they went through in the
+            evangelical church. Through their music Spencer is able to make you connect with their 
+        </p>
+    `;
+>>>>>>> 0d3a862fb4e581a6261da0326e46fbccf89ef9b3
 
             ç
 
