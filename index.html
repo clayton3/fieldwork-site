@@ -5,41 +5,112 @@
     <title>Spencer LaJoye Live!</title>
 
     <link href="style/main.css" rel="stylesheet" type="text/css" />
-    <link href="style/NavRouter.css" rel="stylesheet" type="text/css" />
+    <link href="style/dropdown.css" rel="stylesheet" type="text/css" />
+    <link href="style/comingSoon.css" rel="stylesheet" type="text/css" />
+
+    <!-- You need these two CDNs to use react, their version numbers must match -->
+    <!-- changed version on 10-20-2022 from 16.3.1 to 18 for react and react-dom -->
+    <script src='https://unpkg.com/react@18/umd/react.production.min.js'></script>
+    <script src='https://unpkg.com/react-dom@18/umd/react-dom.production.min.js'></script>
+
+    <!-- This next CDN lets you use JSX (looks like HTML tags in JS) -->
+    <script src='https://unpkg.com/babel-standalone@6.26.0/babel.js'></script>
+
+    <!-- This lets you use React Routing -->
+    <script src='https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js'></script>
 </head>
 <body>
-    <div id="titleNav">
-        <div id="title">
-            Spencer LaJoye Live! in South Philly
-        </div>
-        <div id="nav"></div>
-    </div>
-
-    <div id="content"></div>
+    <div id="root"></div>
 
     <div id="footer">Clayton Blevins</div>
 
     <script>"use strict";</script>
 
-    <script src="js/reusable/MakeNavRouter.js"></script>
+    <script src="js/reusable/dropDownFW.js"></script>
+    <script type="text/babel" src="js/reusable/comingSoon.js"></script>
 
-    <script src="js/content/homeContent.js"></script>
-    <script src="js/content/genreContent.js"></script>
-    <script src="js/content/artistContent.js"></script>
+    <script type="text/babel" src="js/content/homeContent.js"></script>
+    <script type="text/babel" src="js/content/genreContent.js"></script>
+    <script type="text/babel" src="js/content/artistContent.js"></script>
+    <script type="text/babel" src="js/content/musicContent.js"></script>
+    <script type="text/babel" src="js/content/performanceContent.js"></script>
+    <script type="text/babel" src="js/content/connectionContent.js"></script>
+    <script type="text/babel" src="js/content/socialContent.js"></script>
+    <script type="text/babel" src="js/content/personalContent.js"></script>
+    <script type="text/babel" src="js/content/bibliographyContent.js"></script>
 
-    <script>
-        var myNavList = [
-            { linkText:"Home", linkURL: "#/home", action: homeContent },
-            { linkText: "Genre", linkURL: "#/genre", action: genreContent },
-            { linkText: "Artist", linkURL: "#/artist", action: artistContent }
-        ];
+    <!--
+    Script for React Code
+    -->
+    <script type="text/babel">
 
-        var myNav = MakeNavRouter({
-            navId: "nav",
-            navList: myNavList,
-            contentId: "content",
-            startLink: "#/home"
+        "use strict";
+
+        dropDownFW({
+            dropHeaderStyle: "dropHeader",
+            dropContentStyle: "dropContent",
+            showStyle: "show",
+            hideStyle: "hide"
         });
+
+        const Link = ReactRouterDOM.Link;
+        const Route = ReactRouterDOM.Route;
+
+        const App = () => (
+            <ReactRouterDOM.HashRouter>
+
+                <div id="titleNav">
+                    <div id="title">
+                        Spencer LaJoye!
+                    </div>
+                    <div id="nav">
+                        <div class="dropdown">
+                            <Link to="/home">Home</Link>
+                        </div>
+
+                        <div class="dropdown">
+                            <div class="dropHeader">Search</div>
+                            <div class="dropContent">
+                                <Link to="/artist">Artist</Link> <br />
+                                <Link to="/genre">Genre</Link> <br />
+                                <Link to="/music">Music</Link> <br />
+                                <Link to="/performance">Performance</Link> <br />
+                                <Link to="/connections">Connections</Link> <br />
+                                <Link to="/social">Social Issues</Link> <br />
+                                <Link to="/reflection">Personal Reflection</Link> <br />
+                                <Link to="/bibliography">Bibliography</Link> <br />
+                            </div>
+                        </div>
+
+                        <div class="dropdown">
+                            <Link to="/blog">Blog</Link>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content">
+                    <Route path="/" exact component={homeContent} />
+                    <Route path="/home" component={homeContent} />
+                    <Route path="/artist" component={artistContent} />
+                    <Route path="/genre" component={genreContent} />
+                    <Route path="/music" component={musicContent} />
+                    <Route path="/performance" component={performanceContent} />
+                    <Route path="/connections" component={connectionContent} />
+                    <Route path="/social" component={socialContent} />
+                    <Route path="/reflection" component={personalContent} />
+                    <Route path="/bibliography" component={bibliographyContent} />
+                </div>
+
+                <div id="footer">
+                    Clayton Blevins
+                </div>
+
+            </ReactRouterDOM.HashRouter>
+        );
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+
     </script>
+
 </body>
 </html>

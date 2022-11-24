@@ -1,0 +1,19 @@
+.comingSoon div {
+    border: #445566 solid;
+    backface-visibility: visible;
+    background-color: cadetblue;
+    box-sizing: border-box;
+    padding-top: 2rem;
+}
+
+.comingSoon h3 {
+    color: beige;
+    text-align: center;
+}
+
+.comingSoon p {
+    color: black;
+    text-shadow: #AAAAAA;
+    text-align: center;
+    padding-left: .5rem;
+}
