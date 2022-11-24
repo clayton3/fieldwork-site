@@ -1,7 +1,7 @@
 const musicContent = () => {
     return (
         <div>
-            <h2>The Musical Styling of Spencer LaJoye</h2>
+            <h2>The Musical Styling of Spencer LaJoye:</h2>
             <p>
                 Spencer LaJoye's music is characterized by their use of both folk and pop music styles. By blending these genres, Spencer is able to communicate deep
                 concepts and meaningful lyrics through their songs. The use of folk and pop music makes Spencer's music easy for anyone to listen to, while still providing

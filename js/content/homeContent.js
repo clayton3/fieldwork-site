@@ -1,7 +1,7 @@
 const homeContent = () => {
     return (
         <div>
-            <h2>Introduction to my Experience</h2>
+            <h2>Introduction to my Experience:</h2>
             <p>
                 During my time at the house show for Spencer LaJoye I really feel like I had my eyes open to a perspective
                 and world view that I have never had the opportunity to experience in my life. In the pages listed in the

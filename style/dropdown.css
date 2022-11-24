@@ -17,8 +17,8 @@
 .dropdown {
 
     /* .dropdown is a parent of dropConent. Since we want to right justify dropConent with its parent,
-    assign "position relative" to the parent (.dropdown) and "position absolute" to the child (.dropContent).      */ 
-    position: relative;  
+    assign "position relative" to the parent (.dropdown) and "position absolute" to the child (.dropContent).      */
+    position: relative;
 
     /* "display:inline-block" makes divs are positioned/treated like words instead of like block/paragraph elements */
     display: inline-block;
@@ -48,7 +48,7 @@
 
     background-color: lightblue;
     border-radius: 8px;
-    box-shadow: 0px 0px 5px #74A5FD;  
+    box-shadow: 0px 0px 5px #74A5FD;
 
     /* position absolute aligns with its 1st non static parent (.dropdown)  */
     position: absolute;
@@ -65,8 +65,10 @@
    first non-static parent, dropdown (which is position:relative) */
 .dropdown .show {
     right: 0px; /* make it 100% solid (visible) */
+    opacity: 100;
 }
 
 .dropdown .hide {
     right: -500px; /* initially not shown, solidness 0% */
+    opacity: 0;
 }
